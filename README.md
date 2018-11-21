@@ -26,11 +26,12 @@ Requirements
 
 Installation
 ------------
-
+ - `git clone https://github.com/IntegralOy/syspassclient.git`
+ - `cd syspassclient`
  - `composer install`
  - `mkdir ~/.syspass`
  - `cp config_example.json ~/.syspass/config.json`
- - edit `~/.syspass/config.json` and type your syspass host, token and password there
+ - `nano ~/.syspass/config.json` and type your syspass host, token and password there
  - `nano ~/.bash_profile`
    - add line `alias syspass='/path/to/syspassclient_install_dir/bin/syspass'`
  - Start a new terminal and type `syspass searchterm`

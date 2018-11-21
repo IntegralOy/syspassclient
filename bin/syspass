@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of the sysPassClient package.
+ *
+ * (c) Integral Oy <integral@integral.fi>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('SysPassClient');
+$command = new \Integral\SysPass\SysPassClientCommand('syspass');
+
+$application->add($command);
+$application->setDefaultCommand($command->getName(), true);
+$application->run();

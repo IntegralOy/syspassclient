@@ -1,0 +1,47 @@
+{
+    "name": "integraloy/syspassclient",
+    "type": "project",
+    "description": "A CLI client for searching and displaying credentials stored in the sysPass server",
+    "keywords": ["sysPass", "CLI Client"],
+    "homepage": "https://www.integral.fi",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Danielsson",
+            "email": "patrick.danielsson@integral.fi"
+        },
+        {
+            "name": "Tuukka Antikainen",
+            "email": "tuukka.antikainen@integral.fi"
+        },
+        {
+            "name": "Integral Oy",
+            "homepage": "https://www.integral.fi"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "symfony/console": "~3.3",
+        "guzzlehttp/guzzle": "~6.0",
+        "symfony/process": "^4.1"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^7.4",
+        "friendsofphp/php-cs-fixer": "^2.13"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Integral\\SysPass\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4" : {
+            "Integral\\SysPass\\Tests\\" : "tests/"
+        }
+    },
+    "bin": [
+        "bin/syspass"
+    ]
+}

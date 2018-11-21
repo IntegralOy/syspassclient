@@ -1,0 +1,5 @@
+{
+  "host": "https://syspass.example.com/api.php",
+  "token": "your api token here",
+  "pass": "your api password here"
+}

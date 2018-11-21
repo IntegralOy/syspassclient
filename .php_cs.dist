@@ -1,0 +1,73 @@
+<?php
+/**
+ * PHP CS Fixer Configuration File
+ * Must return an instance of Symfony\CS\ConfigInterface
+ *
+ * Usage:
+ * php-cs-fixer fix (--dry-run)
+ *
+ * Exit codes
+ *
+ * 0 OK
+ * 1 No changes made
+ * 16 Configuration error of the application
+ * 32 Configuration error of a Fixer
+ *
+ */
+
+$finder = PhpCsFixer\Finder::create()
+    ->in('src')
+    ->in('tests')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@PHP71Migration' => true,
+        '@PHPUnit60Migration:risky' => true,
+        '@PSR2' => true,
+        '@DoctrineAnnotation' => true,
+        'no_empty_statement' => true,
+        'no_extra_consecutive_blank_lines' => true,
+        'no_leading_namespace_whitespace' => true,
+        'linebreak_after_opening_tag' => true,
+        'binary_operator_spaces' => true,
+        'no_leading_import_slash' => true,
+        'space_after_semicolon' => true,
+        'ternary_operator_spaces' => true,
+        'no_unused_imports' => true,
+        'no_whitespace_before_comma_in_array' => true,
+        'blank_line_after_opening_tag' => true,
+        'function_typehint_space' => true,
+        'hash_to_slash_comment' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_before_return' => true,
+        'include' => true,
+        'mb_str_functions' => false,
+        'native_function_casing' => true,
+        'no_alias_functions' => true,
+        'no_php4_constructor' => true,
+        'no_trailing_comma_in_list_call' => true,
+        'short_scalar_cast' => true,
+        'standardize_not_equals' => true,
+        'random_api_migration' => true,
+        'combine_consecutive_issets' => true,
+        'combine_consecutive_unsets' => true,
+        'function_to_constant' => ['functions' => ['get_class', 'get_called_class', 'php_sapi_name', 'phpversion', 'pi']],
+        'no_mixed_echo_print' => ['use' => 'echo'],
+        'cast_spaces' => true,
+        'class_attributes_separation' => true,
+        'dir_constant' => true,
+        'increment_style' => ['style' => 'pre'],
+        'is_null' => ['use_yoda_style' => false],
+        'lowercase_cast' => true,
+        'magic_constant_casing' => true,
+        'modernize_types_casting' => true,
+        'native_function_invocation' => false,
+        'new_with_braces' => true,
+        'declare_strict_types' => true,
+        'single_quote' => ['strings_containing_single_quote_chars' => false],
+        'doctrine_annotation_indentation' => ['ignored_tags' => ['OA\\Parameter', 'OA\\RequestBody', 'OA\\Response', 'OA\\Get', 'OA\\Post', 'OA\\Put', 'abstract', 'access', 'code', 'deprec', 'encode', 'exception', 'final', 'ingroup', 'inheritdoc', 'inheritDoc', 'magic', 'name', 'toc', 'tutorial', 'private', 'static', 'staticvar', 'staticVar', 'throw', 'api', 'author', 'category', 'copyright', 'deprecated', 'example', 'filesource', 'global', 'ignore', 'internal', 'license', 'link', 'method', 'package', 'param', 'property', 'property-read', 'property-write', 'return', 'see', 'since', 'source', 'subpackage', 'throws', 'todo', 'TODO', 'usedBy', 'uses', 'var', 'version', 'after', 'afterClass', 'backupGlobals', 'backupStaticAttributes', 'before', 'beforeClass', 'codeCoverageIgnore', 'codeCoverageIgnoreStart', 'codeCoverageIgnoreEnd', 'covers', 'coversDefaultClass', 'coversNothing', 'dataProvider', 'depends', 'expectedException', 'expectedExceptionCode', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp', 'group', 'large', 'medium', 'preserveGlobalState', 'requires', 'runTestsInSeparateProcesses', 'runInSeparateProcess', 'small', 'test', 'testdox', 'ticket', 'uses', 'SuppressWarnings', 'noinspection', 'package_version', 'enduml', 'startuml', 'fix', 'FIXME', 'fixme', 'override']]
+    ])
+    ->setFinder($finder)
+;
